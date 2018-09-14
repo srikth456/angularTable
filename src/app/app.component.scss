@@ -1,0 +1,66 @@
+@font-face {
+    font-family: myriad-set-pro-thin;
+    src: url(../fonts/myriad-set-pro_thin.ttf);
+}
+@font-face {
+    font-family: myriad-set-pro_text;
+    src: url(../fonts/myriad-set-pro_text.ttf);
+}
+.datatable{
+.datatable-content{
+    float: left;
+    width:100%;
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    font-family: myriad-set-pro-thin;
+    margin: 20px 0;
+}
+.next-btn{
+    font-size: 15px;
+    position: absolute;
+    right:9px;
+    top:26px;
+    padding: 6px 28px;
+    height: 36px;
+    width: 87px;
+    font-family: myriad-set-pro_text;
+    background: #439fe7; /* Old browsers */
+    background: -moz-linear-gradient(top, #439fe7 1%, #1279c9 100%, #1279c9 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #439fe7 1%,#1279c9 100%,#1279c9 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #439fe7 1%,#1279c9 100%,#1279c9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#439fe7', endColorstr='#1279c9',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+.datatable-buttons{
+    float: left;
+    width: 100%;    
+    text-align: center;
+    display: table;
+    margin: 10px 0 20px 0;
+
+.active-tab{
+    font-family: myriad-set-pro_text;  
+    border-radius: 5px 0 0 5px;
+    color:#fff;
+    background: #439fe7; /* Old browsers */
+    background: -moz-linear-gradient(top, #439fe7 1%, #1279c9 100%, #1279c9 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #439fe7 1%,#1279c9 100%,#1279c9 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #439fe7 1%,#1279c9 100%,#1279c9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#439fe7', endColorstr='#1279c9',GradientType=0 ); /* IE6-9 */
+}
+.all{
+    font-family: myriad-set-pro_text;
+    font-size: 14px;  
+    padding: 7px 16px;
+    border-radius:0px 5px 5px 0px;
+}
+.btn{
+    margin: 0px;
+    font-size: 14px;  
+    padding: 7px 16px;
+}
+}
+}

@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="datatable">
+    <app-modal name="datatables">
+            <button class="btn btn-primary next-btn" [disabled]="nextAvailable" (click)="selectFilter('','allRequisitions')">Next</button>
+        <h1 class="datatable-content">Add Sarah Gutierrez to Requisition</h1>      
+       <div class="datatable-buttons">
+            <button type="button" class="btn active-tab" 
+            (click)="selectFilter('Johnny Applessed','myRequisitions')" 
+            [ngClass]="{'active-tab': setActiveTab == 'myRequisitions' }" >
+            My Requisitions</button>
+            <button type="button" class="btn all" (click)="selectFilter('','allRequisitions')" 
+            [ngClass]="{'active-tab': setActiveTab == 'allRequisitions' }">
+            All Requisitions</button>
+        </div>       
+        <data-table [gridOptions]="dataTableOptions"></data-table>
+      </app-modal>
+      <button class="btn btn-primary" modalOpen="datatables">Open Modal</button>
+  </div>
+

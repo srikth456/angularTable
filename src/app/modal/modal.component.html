@@ -1,0 +1,8 @@
+<div class="modal-overlay" (click)="clickOverlay($event)" [hidden]="!show">
+    <div class="modal-box">
+      <ng-content></ng-content>
+      <button class="close-button close" (click)="toggle()">
+      &times;
+      </button>
+    </div>
+  </div>

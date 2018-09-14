@@ -1,0 +1,72 @@
+<div>
+    <div *ngIf="gridOptions.config.showFilter" class="searchbar">
+        <label>Search for keywords </label>
+        <div class="input-group col-md-12 searchbar-div">
+            <input type="text" class="  search-query form-control" placeholder="Search by Requisition Name, Requisition ID, Recruiter, Hiring Manager" [(ngModel)]="gridOptions.config.filterBy" />
+            <span class="input-group-btn">
+                <button class="btn btn-danger" type="button" >
+                    <span ><img src="../assets/searchIcon.png" alt="searchIcon" height="18px" width="18px" style="margin-top:-5px"></span>
+                    <!-- <img src="../assets/searchIcon.png" alt="searchIcon" height="20px" width="20px" style="margin-top:-2px"> -->
+                </button>
+            </span>
+        </div>
+    </div>
+    <div class="Requisition-selected">
+        <span class="pull-left"> {{this.gridOptions.config.selectedRows.length}} Requisition selected</span>
+        <span class="pull-right">
+            {{ this.gridData.length}} of {{this.gridOptions.data.length}} Results
+        </span>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    &nbsp;
+                </th>
+                <th *ngFor="let column of gridOptions.columns" (click)="sortHandler(column.field)">
+                    <span [innerHTML]="column.name"></span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>            
+            <tr *ngFor="let row of gridData | search: gridOptions.config.filterBy | orderBy: {property: gridOptions.config.sortBy, direction: gridOptions.config.sortDirection}">
+                <td class="td-checkbox">
+                    <label>
+                        <input type="checkbox" [(ngModel)]="row.selected" (change)="onSelectRow($event, row)">
+                        <span class="c-chekbox"></span>
+                    </label>
+                </td>
+                <td *ngFor="let column of gridOptions.columns">{{row[column.field]}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="col-xs-12">
+        <div>
+            <div class="container">
+                <div *ngFor="let item of pagedItems">{{item.name}}</div>
+                <ul *ngIf="this.gridOptions.config.pagination.pages && this.gridOptions.config.pagination.pages.length" class="custom-pagination">
+                    <li [ngClass]="{disabled:this.gridOptions.config.pagination.currentPage === 1,'page-item': true }" >
+                        <a (click)="onPageChange(this.gridOptions.config.pagination.currentPage - 1)"> 
+                                <span class="glyphicon glyphicon-chevron-left"></span>    
+                        </a>
+                    </li>
+                    <li>
+                        <span>{{ this.gridOptions.config.pagination.currentPage}}</span>
+                    </li>
+                    <li>of </li>
+                    <li> <a>{{this.gridOptions.config.pagination.totalPages}} </a></li>                    
+                    <li [ngClass]="{disabled:this.gridOptions.config.pagination.currentPage === this.gridOptions.config.pagination.totalPages,'page-item': true }" >
+                        <a (click)="onPageChange(this.gridOptions.config.pagination.currentPage + 1)">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </li>
+                   
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

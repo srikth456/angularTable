@@ -1,0 +1,30 @@
+.modal-overlay {
+    background: rgba(0,0,0,0.6);
+    position: fixed; 
+    top: 0;
+    left: 0; 
+    right: 0;
+    bottom: 0; 
+.modal-box { 
+    background: white; 
+    width: 90%;
+    margin: 40px auto;
+    min-height: 70vh;
+    position: relative; 
+    padding: 26px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 90%;
+    padding-bottom: 0;
+   
+.close-button { 
+    position: absolute;
+    left: 26px;
+    top:26px;
+    font-size: 40px;
+    font-weight: normal;
+    font-family: myriad-set-pro_text;
+    line-height: 30px;
+    }  
+}
+}
